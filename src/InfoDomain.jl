@@ -19,7 +19,7 @@ export field_filename
 export field_persons
 export field_keywords
 # =======================
-const global server_uri = "http://titan:5984"
+const global server_uri = "http://services.diarra.ovh:5984"
 const global database_name = "infomedia"
 # 
 # ====================

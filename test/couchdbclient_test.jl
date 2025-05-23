@@ -7,7 +7,7 @@ using CouchDBClient
 # ===================
 # 
 # Server Info
-@testitem "Server info tests" tags = [:skipci] begin
+@testitem "Server info tests" tags = [:skipci]  begin
     tval = CouchDBClient.getserverinfo()
     @test !isempty(tval)
     @test haskey(tval, "couchdb")
