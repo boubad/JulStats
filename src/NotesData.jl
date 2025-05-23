@@ -7,11 +7,11 @@ using Statistics
 using StatsBase
 # ====================
 export NotesData
-export get_notes_dataframe
-export convert_to_ranks
-export remove_outliers!
-export remove_all_outliers!
-# =================
+# export get_notes_dataframe
+# export convert_to_ranks
+# export remove_outliers!
+# export remove_all_outliers!
+# ===========
 function remove_outliers!(xdf::DataFrame, colindex::Int64)
     q1 = quantile(xdf[!, colindex], 0.25)
     q3 = quantile(xdf[!, colindex], 0.75)

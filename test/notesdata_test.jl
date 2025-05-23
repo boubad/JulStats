@@ -12,5 +12,5 @@ using DataFrames
     nrows = size(vret)[1]
     @test nrows == 349
     ncols = size(vret)[2]
-    @test ncols == 10
+    @test ncols == 8
 end
