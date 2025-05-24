@@ -7,10 +7,6 @@ using Statistics
 using StatsBase
 # ====================
 export NotesData
-# export get_notes_dataframe
-# export convert_to_ranks
-# export remove_outliers!
-# export remove_all_outliers!
 # ===========
 function remove_outliers!(xdf::DataFrame, colindex::Int64)
     q1 = quantile(xdf[!, colindex], 0.25)
@@ -73,6 +69,51 @@ function get_notes_dataframe(;
     # Suffle the rows
     shuffle!(df)
     return df
+end
+# ===============
+function discretize_notes(x)::Vector{Int64}
+    n = length(x)
+    result = zeros(Int64, n)
+    for i in 1:n
+        vx = x[i]
+        if vx < 5
+            result[i] = 1
+        elseif vx < 8
+            result[i] = 2
+        elseif vx < 12
+            result[i] = 3
+        elseif vx < 17
+            result[i] = 4
+        else
+            result[i] = 5
+        end
+    end
+    return result
+end
+# =================
+function compute_occurences(x1::Vector{Int64}, x2::Vector{Int64}; nc::Int64=5)
+    occurences = zeros(Float64, nc, nc)
+    ntotal = 0
+    for i in 1:length(x1)
+        xi = x1[i]
+        if xi < 1 || xi > nc || i > length(x2)
+            continue
+        end
+        xj = x2[i]
+        if xj < 1 || xj > nc
+            continue
+        end
+        occurences[xi, xj] += 1
+        ntotal += 1
+    end
+    # Normalize the occurences matrix
+    if ntotal > 0
+        occurences ./= ntotal
+    end
+    # round the values to 2 decimal places
+    occurences = round.(occurences, digits=4)
+    # return result
+    return occurences
 end
 # =================
 # end module
