@@ -2,25 +2,9 @@ module InfoDomain
 # ==============
 export InfoDomain
 # 
-export field_doctype 
-export field_id
-export field_rev
-export field_attachments
-export field_blobrems
-export field_observations
-export type_photo
-export type_video
-export field_name
-export field_tag
-export field_mimetype
-export field_lastdate
-export field_length
-export field_filename
-export field_persons
-export field_keywords
 # =======================
 const global server_uri = "http://services.diarra.ovh:5984"
-const global database_name = "infomedia"
+const global database_name = "dbtest"
 # 
 # ====================
 # 
@@ -41,5 +25,12 @@ const global field_length = "length"
 const global field_filename = "filename"
 const global field_persons = "persons"
 const global field_keywords = "keywords"
+# ==========================
+const global doctype_dataset = "dataset"
+const global doctype_statitem = "statitem"
+const global field_name = "name"
+const global field_sigle = "sigle"
+const global field_variables = "variables"
+const global field_data = "data"
 # ========================== 
 end # en domain InfoDommain

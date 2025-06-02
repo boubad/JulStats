@@ -10,6 +10,8 @@ export MediaProducer
 include("InfoDomain.jl")
 include("NotesData.jl")
 include("CouchDBClient.jl")
+include("StoreObject.jl")
+include("StatObject.jl")
 include("Media.jl")
 include("MediaProducer.jl")
 # ======================

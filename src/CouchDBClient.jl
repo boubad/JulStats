@@ -21,7 +21,7 @@ const global baseuri = InfoDomain.server_uri
 const global dbname = InfoDomain.database_name
 # ============================
 # internal working getfunction
-function performget(uri::String, name::String = dbname, sbase::String = baseuri)::Dict{String, Any}
+function performget(uri::String; name::String = dbname, sbase::String = baseuri)::Dict{String, Any}
 	if isempty(name)
 		url = sbase
 	else
@@ -36,11 +36,11 @@ function performget(uri::String, name::String = dbname, sbase::String = baseuri)
 end
 # Server info
 function getserverinfo(url::String = baseuri)::Dict{String, Any}
-	performget("", "", url)
+	performget("", name="", sbase=url)
 end
 # Database Info
 function getdatabaseinfo(name::String = dbname, uri::String = baseuri)::Dict{String, Any}
-	performget("", name, uri)
+	performget("", name=name, sbase=uri)
 end
 # 
 # find item by 
