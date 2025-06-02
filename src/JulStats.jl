@@ -9,6 +9,7 @@ export MediaProducer
 # Write your package code here.
 include("InfoDomain.jl")
 include("NotesData.jl")
+include("DBManager.jl")
 include("CouchDBClient.jl")
 include("StoreObject.jl")
 include("StatObject.jl")
