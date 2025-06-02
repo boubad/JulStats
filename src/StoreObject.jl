@@ -6,22 +6,20 @@ using .InfoDomain
 # =====================
 export StoreObject
 # =============
-struct StoreObject
+mutable struct StoreObject
     id::String
     rev::String
     doctype::String
-    observations::String
-    function StoreObject(id::String, rev::String, doctype::String, observations::String)
-        new(id, rev, doctype, observations)
+    function StoreObject(; id::String="", rev::String="", doctype::String="")
+        new(id, rev, doctype)
     end
 end
-# ==============
-function dicttostoreobject(d::Dict{String,Any})
-    id = haskey(d, InfoDomain.field_id) ? d[InfoDomain.field_id] : ""
-    rev = haskey(d, InfoDomain.field_rev) ? d[InfoDomain.field_rev] : ""
-    doctype = haskey(d, InfoDomain.field_doctype) ? d[InfoDomain.field_doctype] : ""
-     observations = haskey(d, InfoDomain.field_observations) ? d[InfoDomain.field_observations] : ""
-    return 
+# =============
+function fill_storeobject(p::StoreObject, d::Dict{String,Any})
+    p.id = haskey(d, InfoDomain.field_id) ? d[InfoDomain.field_id] : ""
+    p.rev = haskey(d, InfoDomain.field_rev) ? d[InfoDomain.field_rev] : ""
+    p.doctype = haskey(d, InfoDomain.field_doctype) ? d[InfoDomain.field_doctype] : ""
+    return p
 end
 # ==============
 # end module
