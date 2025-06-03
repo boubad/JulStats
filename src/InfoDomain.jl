@@ -1,7 +1,3 @@
-module InfoDomain
-# ==============
-export InfoDomain
-# 
 # =======================
 const global server_uri = "http://services.diarra.ovh:5984"
 const global database_name = "dbtest"
@@ -33,4 +29,3 @@ const global field_sigle = "sigle"
 const global field_variables = "variables"
 const global field_data = "data"
 # ========================== 
-end # en domain InfoDommain

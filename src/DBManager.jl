@@ -1,17 +1,15 @@
 module DBManager
 # =================
-include("InfoDomain.jl")
+# include("InfoDomain.jl")
 # ==================
-using .InfoDomain
-# ==================
-export DBManager
+# export DBManager
 export DBClient
 # ====================	
 using Base64
 using JSON
 using HTTP
 # ============================
-using .InfoDomain
+# using InfoDomain
 # ============================
 # constants definitions
 const db_credentials = "Basic " * base64encode("boubad:bouba256")

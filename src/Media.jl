@@ -4,7 +4,6 @@ include("InfoDomain.jl")
 include("StoreObject.jl")
 # ==========
 using .InfoDomain
-using .BaseObject
 # # ==========================
 export Photo
 export Video
