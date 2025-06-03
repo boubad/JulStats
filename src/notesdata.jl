@@ -1,13 +1,9 @@
-module NotesData
-# ===================
 using CSV
 using DataFrames
 using Random
 using Statistics
 using StatsBase
 # ====================
-export NotesData
-# ===========
 function remove_outliers!(xdf::DataFrame, colindex::Int64)
     q1 = quantile(xdf[!, colindex], 0.25)
     q3 = quantile(xdf[!, colindex], 0.75)
@@ -116,6 +112,4 @@ function compute_occurences(x1::Vector{Int64}, x2::Vector{Int64}; nc::Int64=5)
     return occurences
 end
 # =================
-# end module
-end
 

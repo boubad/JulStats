@@ -1,7 +1,5 @@
-module Media
-# # ==========================
-include("InfoDomain.jl")
-include("StoreObject.jl")
+include("infodomain.jl")
+include("storeobject_file.jl")
 # ==========
 using .InfoDomain
 # # ==========================
@@ -83,5 +81,3 @@ function dicttomediaitem(d::Dict{String,Any})
     return mediaitem(id, rev, doctype, name, tag, filename, mimetype, lastdate, size, observations, ppersons, pkeywords)
 end
 # # ==========================
-# end module
-end

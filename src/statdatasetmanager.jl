@@ -1,8 +1,8 @@
-include("InfoDomain.jl")
-include("DBManager.jl")
-include("StoreObject.jl")
-include("DatasetObject.jl")
-include("StatItemObject.jl")
+include("infodomain.jl")
+include("dbclient.jl")
+include("storeobject.jl")
+include("datasetobject.jl")
+include("statitemobject.jl")
 # ==================
 using .InfoDomain
 # ==================

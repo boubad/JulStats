@@ -1,5 +1,3 @@
-module CouchDBClient
-# ==================
 include("InfoDomain.jl")
 # ===================
 export CouchDBClient
@@ -114,6 +112,4 @@ function findoneitem(sel::Dict{String, Any}; databasename::String = dbname, serv
 	else
 		return dx[1], true
 	end
-end
-# end module
 end

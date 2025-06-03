@@ -1,8 +1,6 @@
-module MediaProducer
-# ========================
-include("CouchDBClient.jl")
-include("InfoDomain.jl")
-include("Media.jl")
+include("couchdbclient.jl")
+include("infodomain.jl")
+include("media.jl")
 # ==========================
 using .InfoDomain
 using .CouchDBClient
@@ -48,4 +46,4 @@ function producer_video(c::Channel)
     end
 end
 # ==========================
-end
+

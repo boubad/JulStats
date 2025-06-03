@@ -1,4 +1,3 @@
-module DBManager
 # =================
 # include("InfoDomain.jl")
 # ==================
@@ -152,5 +151,3 @@ function get_docs_count(db::DBClient, sel::Dict{String,Any})::Int64
     return total
 end
 # ==============
-# end module
-end
